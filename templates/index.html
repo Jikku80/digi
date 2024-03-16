@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF=8">
+    <title>Digi : Detecting digit drawn in canvas</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <body>
+        <div class="cov_sec">
+            <img class="cov_img" src="/static/bg.png" alt="cov_imge">
+            <div class="sechalf"></div>
+        </div>
+        <div class="navbar">
+            <ul class="left_side">
+                <li>Di<span class="witetxt">gi</span></li>
+            </ul>
+            <ul class="right_side">
+                <li>About Us</li>
+                <li>Help</li>
+            </ul>
+        </div>
+        <div class="detect_intro">
+            <div class="detect_inner">
+                <h1>Detect My Number?</h1>
+                <h3>Draw a digit between 0 and 9 and <br>click 'Detect' to have the model detect it!</h3>
+                <canvas id="canvas_area" width="280" height="280"></canvas>
+                <div class="detect_button">
+                    <input type="button" class="button" value="Detect" id="btn" size="30" onclick="fetchdata()">
+                    <input type="button" class="button" value="clear" id="clr" size="23" onclick="erase()">
+                    <label>Brush Size:</label> 
+                    <select id="brush_select" class="select" onchange="SetBrushSize()">
+                        <option value="20">20</option>
+                        <option value="30" selected>30</option> 
+                        <option value="50">50</option>
+                        <option value="80">80</option>
+                    </select> 
+                </div>
+            </div>
+        </div>
+        <label id='predicted_digit' name='predicted_digit'> {{prediction}}</label> 
+    </body>
+</html>
